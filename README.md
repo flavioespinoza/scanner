@@ -11,3 +11,10 @@
 - Passport
 - Elasticsearch
 - MongoDB
+
+## Deployment
+
+- Linux
+- Ubuntu 18.04
+- Nginx
+- PM2
