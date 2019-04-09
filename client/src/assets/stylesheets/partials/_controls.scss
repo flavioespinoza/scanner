@@ -1,0 +1,61 @@
+.hide {
+    display: none;
+
+}
+
+.controls-nav-bar {
+
+}
+
+.controls-nav-card {
+
+}
+
+#controls_nav_bar {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.control-list-item {
+    margin-bottom: 8px;
+}
+
+
+.card-percent-list-title__main {
+    .ms-DocumentCardTitle {
+        margin-bottom: 0 !important;
+    }
+}
+
+#watchlist {
+    position: relative;
+
+    .ms-DocumentCardTitle {
+        margin-bottom: 0 !important;
+    }
+
+    .watchlist-open-modal-btn {
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        cursor: pointer;
+    }
+
+}
+
+#percent_change_list, #watchlist, #ignore_list {
+    .ms-Button-icon {
+        font-size: 11px !important;
+        margin-bottom: -4px !important;
+    }
+}
+
+.icon-list-header-ignore-list {
+    font-size: 11px !important;
+    margin-top: 2px !important;
+    text-align: center !important;
+}
+
+
+
+

@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "Api",
+      "script": "index.js",
+      "output": "/dev/null",
+      "error": "/logs/error_log.log",
+      "watch": false,
+      "instances": 8,
+      "exec_mode": "cluster",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}

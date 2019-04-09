@@ -1,0 +1,154 @@
+.list-simple {
+
+    &-header-controls {
+        position: relative;
+        width: calc(100% - 320px);
+
+        height: 56px;
+        overflow: hidden;
+        border-bottom: 1px solid gainsboro;
+        &-search {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            overflow: hidden;
+            //background: blue;
+        }
+
+    }
+
+    &-toggle-data-update {
+        position: absolute;
+        width: 160px;
+        left: 0;
+        bottom: 12px;
+        margin-bottom: 0 !important;
+
+        .ms-Label {
+            text-align: left;
+        }
+        .ms-Toggle-innerContainer {
+            float: left;
+        }
+    }
+
+    &-toggle-watchlist {
+        position: absolute;
+        width: 64px;
+        right: 0;
+        bottom: 12px;
+        margin-bottom: 0 !important;
+
+        .ms-Label {
+            text-align: right;
+        }
+        .ms-Toggle-innerContainer {
+            float: right;
+        }
+    }
+
+    .label-toggle-watchlist {
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-align: right;
+        padding: 0;
+    }
+
+}
+
+.ms-Pivot-text {
+    font-size: 11px;
+}
+
+.controls-pivot-item {
+    padding-bottom: 12px;
+
+    .pivot-card {
+        height: 200px;
+    }
+
+}
+
+#controls {
+
+    .ms-Pivot {
+        margin-bottom: 6px;
+    }
+
+}
+
+.ms-Link {
+    //background: cornflowerblue !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    width: 100%;
+}
+
+.ms-DetailsHeader-cellTitle {
+    //padding-left: 0 !important;
+    //padding-right: 0 !important;
+}
+
+
+.is_2x {
+    padding-left: 30px !important;
+}
+
+.ms-Dropdown-title {
+    text-align: center !important;
+}
+
+.compare-card {
+    margin-bottom: 8px !important;
+}
+
+#obo_recent, #obo_past {
+    background-color: orange !important;
+}
+
+.obo-compare-ctrl-section {
+    background-color: orange !important;
+}
+
+.icon-obo {
+    color: orange !important;
+}
+
+.icon-is_2x {
+    color: cornflowerblue !important;
+}
+
+.obo-header {
+    background-color: rgba(255, 165, 0, 0.50) !important;
+    border-left: 1px solid white !important;
+}
+
+.vol-quote-header {
+    background-color: rgba(100, 149, 237, 0.50) !important;
+    border-left: 1px solid white !important;
+}
+
+.fixed-sticky-header {
+    border-left: 1px solid gainsboro !important;
+    border-right: 1px solid gainsboro !important;
+    border-bottom: 1px solid gainsboro !important;
+}
+
+.ms-DetailsHeader {
+    background-color: #eeeeee !important;
+}
+
+.text-markets-count {
+    color: #0474D8 !important;
+    //color: red !important;
+    font-size: 16px;
+    padding-left: 6px;
+    margin-top: -12px !important;
+}
+
+.fixed-list-search-box {
+    .ms-Label {
+        margin-bottom: 4px !important;
+    }
+}

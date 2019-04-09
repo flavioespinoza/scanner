@@ -1,0 +1,102 @@
+$blue: #0178D4;
+
+header {
+    background: #e6e6e6;
+    height: $header-height;
+    width: 100%;
+    padding: 0 $wrapper-horiz-pad;
+
+    .mobile-nav-toggle {
+        text-decoration: none;
+        line-height: $header-height;
+        color: #000;
+    }
+
+    .logo {
+        line-height: $header-height;
+        padding-left: 18px;
+    }
+
+    // Navigation
+    nav {
+        // Mobile navigation
+        &.mobile {
+            display: none;
+
+            &.is-expanded {
+                display: block;
+
+                ul {
+                    position: absolute;
+                    width: 100%;
+                    right: 0;
+                    top: $header-height;
+                    padding: 10px;
+                    background-color: #efefef;
+
+                    li {
+                        display: block;
+                        padding: 10px 0;
+                        line-height: 1rem;
+                        border-top: 1px solid #CCC;
+
+                        &:first-of-type {
+                            border-top: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Non-mobile and shared navigation
+        ul {
+            margin: 0 20px 0 0;
+            padding-left: 0;
+
+            li {
+                display: inline-block;
+                padding: 0 10px;
+                line-height: $header-height;
+
+                &:last-of-type {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+a {
+    color: $blue !important;
+    &:visited {
+        color: $blue !important;
+    }
+}
+
+.active {
+    a {
+        color: crimson !important;
+    }
+    .ms-Button-icon {
+        color: crimson !important;
+    }
+}
+
+.watchlist {
+
+}
+
+.watchlist-icon {
+    .ms-Button-icon {
+        font-size: 20px !important;
+    }
+}
+
+.is-localhost {
+    background-color: rgba(100, 149, 237, 0.50) !important;
+}
+
+.header-ul-mobile {
+    margin: 0 !important;
+    z-index: 10
+}
