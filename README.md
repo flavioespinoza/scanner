@@ -26,13 +26,13 @@ The `Scanner` notifies the trader of `markets` that meet the criteria that the t
 
 ## Installation
 
-Given the numerous requirements and complexity of the Scanners architecture a series of tutorials are being completed with a scheduled completion date of May 1, 2019.  Below are is a schedule of tutorials and their completion status.
+Given the complexity of the `Scanners` architecture and deployment requirements a series of `tutorials` are being completed with a `scheduled completion date` of `May 1, 2019`.  Below is the list of `tutorials` and their `completion status`.
 
 <br />
 
 
-- [ ] Deploy Linux server with Ubuntu 18.04 on DigitalOcean.com: `In Progress: Apr 9, 2019`
-- [x] Install Java on Ubuntu 18.04: `In Progress: 90% Complete: Apr 9, 2019` - [Link](docs/install-java.md)
+- [ ] Deploy Linux server with Ubuntu 18.04 on DigitalOcean.com: `In Progress: 20% Complete`
+- [x] Install Java on Ubuntu 18.04: `In Progress: 90% Complete` - [Link](docs/install-java.md)
 - [ ] Install Nginx on Ubuntu 18.04: `Pending`
 - [ ] Install PM2 on Ubuntu 18.04: `Pending`
 - [ ] Install Node on Ubuntu 18.04: `Pending`
