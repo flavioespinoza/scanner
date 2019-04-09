@@ -18,6 +18,7 @@ The `Scanner` notifies the trader of `markets` that meet the criteria that the t
 
 ## Deployment
 
+- DigitalOcean.com
 - Linux
 - Ubuntu 18.04
 - Nginx
