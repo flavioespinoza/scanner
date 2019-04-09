@@ -1,6 +1,6 @@
 # Scanner
 
-The foundation of this project is based on a trading method invented by the famous day trader known as `Quick Fingers Luke` commonly known as the `QFL Method`. The `Scanner` uses `Elasticsearch` to continually compare the current state of crypto currency `markets` (i.e. parings: `BTC/USD`) against the state of said market for the past 60hrs.
+The foundation of this project is based on a trading method invented by the famous day trader known as `Quick Fingers Luke` commonly known as the `QFL Method`. The `Scanner` uses `Elasticsearch` to continually compare the current state of crypto currency `markets` (i.e. parings: `BTC/USD`) against the state of said `market` for the past 60hrs.
 
 <br/>
 
@@ -16,7 +16,7 @@ The `Scanner` notifies the trader of `markets` that meet the criteria that the t
 - Elasticsearch
 - MongoDB
 
-## Deployment
+## Web Server
 
 - DigitalOcean.com
 - Linux
@@ -24,7 +24,7 @@ The `Scanner` notifies the trader of `markets` that meet the criteria that the t
 - Nginx
 - PM2
 
-## Installation
+## Installation and Deployment
 
 Given the complexity of the `Scanners` architecture and deployment requirements a series of `tutorials` are being completed with a `scheduled completion date` of `May 1, 2019`.  Below is the list of `tutorials` and their `completion status`.
 
