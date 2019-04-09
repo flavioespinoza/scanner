@@ -23,3 +23,17 @@ The `Scanner` notifies the trader of `markets` that meet the criteria that the t
 - Ubuntu 18.04
 - Nginx
 - PM2
+
+## Installation
+
+Given the numerous requirements and complexity of the Scanners architecture a series of tutorials are being completed with a scheduled completion date of May 1, 2019.  Below are is a schedule of tutorials and their completion status.
+
+<br />
+
+
+- [ ] Deploy Linux server with Ubuntu 18.04 on DigitalOcean.com: `In Progress: Apr 9, 2019`
+- [x] Install Java on Ubuntu 18.04: `Complete: Apr 1, 2019` - [Link](docs/install-java.md)
+- [ ] Install Nginx on Ubuntu 18.04: `Pending`
+- [ ] Install PM2 on Ubuntu 18.04: `Pending`
+- [ ] Install Node on Ubuntu 18.04: `Pending`
+- [ ] Install Elasticsearch on Ubuntu 18.04: `Pending`
