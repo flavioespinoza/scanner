@@ -32,7 +32,7 @@ Given the complexity of the `Scanners` architecture and deployment requirements 
 
 
 - [ ] Deploy Linux server with Ubuntu 18.04 on DigitalOcean.com: `In Progress: 20% Complete`
-- [x] Install Java on Ubuntu 18.04: `In Progress: 90% Complete` - [Link](docs/install-java.md)
+- [ ] Install Java on Ubuntu 18.04: `In Progress: 90% Complete`
 - [ ] Install Nginx on Ubuntu 18.04: `Pending`
 - [ ] Install PM2 on Ubuntu 18.04: `Pending`
 - [ ] Install Node on Ubuntu 18.04: `Pending`
