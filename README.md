@@ -32,7 +32,7 @@ Given the numerous requirements and complexity of the Scanners architecture a se
 
 
 - [ ] Deploy Linux server with Ubuntu 18.04 on DigitalOcean.com: `In Progress: Apr 9, 2019`
-- [x] Install Java on Ubuntu 18.04: `Complete: Apr 1, 2019` - [Link](docs/install-java.md)
+- [x] Install Java on Ubuntu 18.04: `In Progress: 90% Complete: Apr 9, 2019` - [Link](docs/install-java.md)
 - [ ] Install Nginx on Ubuntu 18.04: `Pending`
 - [ ] Install PM2 on Ubuntu 18.04: `Pending`
 - [ ] Install Node on Ubuntu 18.04: `Pending`
