@@ -1,4 +1,4 @@
-# Add Java to Ubuntu 18.04
+# Add Java JRE & DJK on Ubuntu 18.04
 
 ---
 

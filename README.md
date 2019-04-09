@@ -21,6 +21,7 @@ The `Scanner` notifies the trader of `markets` that meet the criteria that the t
 - DigitalOcean.com
 - Linux
 - Ubuntu 18.04
+- Java JRE & JDK
 - Nginx
 - PM2
 
@@ -32,7 +33,7 @@ Given the complexity of the `Scanners` architecture and deployment requirements 
 
 
 - [ ] Deploy Linux server with Ubuntu 18.04 on DigitalOcean.com: `In Progress: 20% Complete`
-- [ ] Install Java on Ubuntu 18.04: `In Progress: 90% Complete`
+- [ ] Install Java JRE & JDK on Ubuntu 18.04: `In Progress: 90% Complete`
 - [ ] Install Nginx on Ubuntu 18.04: `Pending`
 - [ ] Install PM2 on Ubuntu 18.04: `Pending`
 - [ ] Install Node on Ubuntu 18.04: `Pending`
