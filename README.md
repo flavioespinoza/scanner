@@ -1,8 +1,13 @@
 # Scanner
 
-Cryptocurrency exchange analyzer
+> Crypto Market Scanner
 
+## Stack
 
-Stack: Elasticsearch, MongoDB, Koa, React/Redux, Node full-stack JavaScript apps.
-
-# Test
+- React
+- Redux
+- Node
+- Koa
+- Passport
+- Elasticsearch
+- MongoDB
