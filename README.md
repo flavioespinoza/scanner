@@ -8,7 +8,7 @@ The `Scanner` uses `Elasticsearch` to continually compare the current state of c
 
 <br/>
 
-The `Scanner` notifies the trader of `markets` that meet the `QFL Method`, plus any other criteria that the trader sets via the `ui` controllers.
+The `Scanner` notifies the trader of `markets` that meet the `QFL Method's` requirements, plus any other criteria that the trader sets via the `ui` controllers.
 
 ## Stack
 
