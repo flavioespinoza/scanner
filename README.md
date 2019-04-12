@@ -6,11 +6,11 @@ The foundation of this project is based on a trading method invented by the famo
 
 The `Scanner` uses `Elasticsearch` to continually compare the current state of crypto currency `markets` (i.e. parings: `BTC/USD`) against the state of said `market` for the past 60hrs.  This allows the trader to focus on only those markets that the `QFL Method` deems worthy of attention.
 
-<br/>
+---
 
+## Overview
 
-# Overview
-##### List of tools, libraries and frameworks that are key components of the project architecture.
+List of tools, libraries and frameworks that are key components of the project's architecture.
 
 ### Client
 
