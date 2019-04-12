@@ -9,17 +9,19 @@ The `Scanner` uses `Elasticsearch` to continually compare the current state of c
 <br/>
 
 
+# Overview
+##### List of tools, libraries and frameworks that are key components of the project architecture.
 
-## Front End Client
+### Client
 
-> Written in [ES6 Javascript](https://www.w3schools.com/js/js_es6.asp) and was setup using [Create React App](https://facebook.github.io/create-react-app/).
+> Written in [ES6 Javascript](https://www.w3schools.com/js/js_es6.asp), and setup with [Create React App](https://facebook.github.io/create-react-app/).
 
 - [React](https://reactjs.org/)
 - [Office UI Fabric React](https://developer.microsoft.com/en-us/fabric#/get-started#react)
 - [Redux](https://redux.js.org/)
 - [Socket.io-client](https://socket.io/docs/internals/#socket-io-client)
 
-## App Server
+### Server
 > Written in [ES6 Javascript](https://www.w3schools.com/js/js_es6.asp).
 - [Node](https://nodejs.org/dist/latest-v11.x/docs/api/)
 - [Koa](https://github.com/koajs/koa)
@@ -28,22 +30,23 @@ The `Scanner` uses `Elasticsearch` to continually compare the current state of c
 - [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/introduction.html)
 - [MongoDB](https://www.mongodb.com/)
 
-## Web Server 
+### Deployment 
 > Secure HTTPS reverse proxy deployed on [DigitalOcean](https://digitalocean.com)
 - Ubuntu 18.04 / Linux
 - [Nginx](https://www.nginx.com/)
 - [PM2](https://pm2.io/doc/en/runtime/overview/?utm_source=pm2&utm_medium=website&utm_campaign=rebranding)
 
+---
 
+## Getting Started
 
-## Installation and Deployment
+> I am currently writting a series of `tutorials` for this project with a `schedueled completion date` of `May 1, 2019`. 
 
-Given the complexity of the `Scanners` architecture and deployment requirements a series of `tutorials` are being completed with a `scheduled completion date` of `May 1, 2019`.  Below is the list of `tutorials` and their `completion status`.
+#### List of tutorials and their completion status
 
 <br />
 
-
-- [ ] Deploy Linux server with Ubuntu 18.04 on DigitalOcean.com: `In Progress: 20% Complete`
+- [ ] Deploy an Ubuntu 18.04 Linux Distribution on [DigitalOcean](https://digitalocean.com): `In Progress: 20% Complete`
 - [ ] Install Java JRE & JDK on Ubuntu 18.04: `In Progress: 90% Complete`
 - [ ] Install Nginx on Ubuntu 18.04: `Pending`
 - [ ] Install PM2 on Ubuntu 18.04: `Pending`
