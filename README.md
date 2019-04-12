@@ -40,11 +40,12 @@ List of tools, libraries and frameworks that are key components of the project's
 
 ## Getting Started
 
-> I am currently writting a series of `tutorials` for this project with a `schedueled completion date` of `May 1, 2019`. 
+> This project requies the  a development server to run `Elasticsearch`.  
 
-#### List of tutorials and their completion status
+> I'm writting a series of `tutorials` with a `schedueled completion date` of `May 1, 2019`. 
 
-<br />
+
+#### List of tutorials
 
 - [ ] Deploy an Ubuntu 18.04 Linux Distribution on [DigitalOcean](https://digitalocean.com): `In Progress: 20% Complete`
 - [ ] Install Java JRE & JDK on Ubuntu 18.04: `In Progress: 90% Complete`
