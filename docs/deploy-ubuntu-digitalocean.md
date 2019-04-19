@@ -2,10 +2,15 @@
 
 ## Prerequisites
 
-This guide requires a `DigitalOcean account` and that you create and setup an `SSH key` on your `MacOS` laptop or desktop machine.
+This guide requires a `DigitalOcean account`.
 
-- 1. [Create New Account on Digital Ocean](https://cloud.digitalocean.com/registrations/new)
-- 2. [Setup SSH Key on MacOS to Connect to your Digital Ocean Droplet](https://www.youtube.com/watch?v=e69K-sCTpDg)
+[Create New Account on Digital Ocean](https://cloud.digitalocean.com/registrations/new)
+
+<br/>
+
+After you log into your `DigitalOcean account` for the first time you need to setup an `SSH key` on your `MacOS` computer.
+
+[Setup an SSH Key on MacOS to Connect to your Digital Ocean Droplet](https://www.youtube.com/watch?v=e69K-sCTpDg)
 
 ---
 
