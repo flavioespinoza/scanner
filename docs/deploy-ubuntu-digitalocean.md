@@ -1,5 +1,14 @@
 <h2 class='md-title__main'>Deploy an Ubuntu 18.04 Linux Distribution on Digital Ocean</h2>
 
+## Prerequisites
+
+This guide requires a `DigitalOcean account` and that you create and setup an `SSH key` on your `MacOS` laptop or desktop machine.
+
+- 1. [Create New Account on Digital Ocean](https://cloud.digitalocean.com/registrations/new)
+- 2. [Setup SSH Key on MacOS to Connect to your Digital Ocean Droplet](https://www.youtube.com/watch?v=e69K-sCTpDg)
+
+---
+
 ## Create Project
 
 - 1. Click on `New Project` in the left side menu
