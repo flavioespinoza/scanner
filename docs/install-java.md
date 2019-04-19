@@ -1,4 +1,4 @@
-# Add Java JRE & DJK on Ubuntu 18.04
+# Install Java, the JRE & the JDK on an Ubuntu 18.04 Linux Distribution
 
 ---
 

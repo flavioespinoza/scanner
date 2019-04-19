@@ -47,9 +47,9 @@ List of tools, libraries and frameworks that are key components of the project's
 
 #### List of tutorials
 
-- [ ] Deploy an Ubuntu 18.04 Linux Distribution on [DigitalOcean](https://digitalocean.com): `In Progress: 20% Complete`
-- [ ] Install Java JRE & JDK on Ubuntu 18.04: `In Progress: 90% Complete`
-- [ ] Install Nginx on Ubuntu 18.04: `Pending`
+- [ ] <a href='deploy-ubuntu-digitalocean.html'>Deploy an Ubuntu 18.04 Linux Distribution on Digital Ocean</a> `90% Complete`
+- [ ] <a href='install-java.html'>Install Java, the JRE & the JDK on an Ubuntu 18.04 Linux Distribution</a> `In Progress: 90% Complete`
+- [ ] Setup a Secure HTTPS/SSL Reverse Proxy with Nginx: `Pending`
 - [ ] Install PM2 on Ubuntu 18.04: `Pending`
 - [ ] Install Node on Ubuntu 18.04: `Pending`
 - [ ] Install Elasticsearch on Ubuntu 18.04: `Pending`
