@@ -8,11 +8,10 @@
 
 #### Commands and Outputs
 
-<div class='md-label'>The code blocks with the <img src='copy-paste-icon.png' class='copy-paste-icon' /> icon are <span class='md-key'>Commands</span> you can <span class='md-key'>Copy and Paste</span> into your Mac OS Terminal or Linux Shell</div>
+<div class='md-label'>The code blocks contain <span class='md-key'>Commands</span> you can <span class='md-key'>Copy and Paste</span> into your the <span class='md-key'>Terminal</span></div>
 
 <section class='md-cmd-block'>
 
-<img class='copy-clip-icon' src='copy-paste-icon.png'>
 
 ```bash {.copy-clip}
 sudo install awesome-package 
