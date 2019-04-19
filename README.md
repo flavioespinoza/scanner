@@ -47,8 +47,8 @@ List of tools, libraries and frameworks that are key components of the project's
 
 #### List of tutorials
 
-- [ ] <a href='flavioespinoza.github.io/scanner/docs/deploy-ubuntu-digitalocean'>Deploy an Ubuntu 18.04 Linux Distribution on Digital Ocean</a> `90% Complete`
-- [ ] <a href='flavioespinoza.github.io/scanner/docs/install-java'>Install Java, the JRE & the JDK on an Ubuntu 18.04 Linux Distribution</a> `In Progress: 90% Complete`
+- [ ] <a href='/docs/deploy-ubuntu-digitalocean'>Deploy an Ubuntu 18.04 Linux Distribution on Digital Ocean</a> `90% Complete`
+- [ ] <a href='/docs/install-java'>Install Java, the JRE & the JDK on an Ubuntu 18.04 Linux Distribution</a> `In Progress: 90% Complete`
 - [ ] Setup a Secure HTTPS/SSL Reverse Proxy with Nginx: `Pending`
 - [ ] Install PM2 on Ubuntu 18.04: `Pending`
 - [ ] Install Node on Ubuntu 18.04: `Pending`
