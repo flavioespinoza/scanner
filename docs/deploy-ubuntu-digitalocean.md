@@ -12,7 +12,7 @@
 
 <br />
 
-## Move Resouces
+## Move Resources
 
 > You can move resources from other projects to this new one, but we will skip this step for now.
 
