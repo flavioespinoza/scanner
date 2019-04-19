@@ -2,9 +2,9 @@
 
 ## Prerequisites
 
-- 1. This guide requires a [Create New Account on Digital Ocean](https://cloud.digitalocean.com/registrations/new) if you don't have one already.
+- 1. This guide requires that you [Create New Account on Digital Ocean](https://cloud.digitalocean.com/registrations/new) if you don't have one already.
 
-- 2. After you log into your account you need to [Setup an SSH Key on MacOS to Connect to your Digital Ocean Droplet](https://www.youtube.com/watch?v=e69K-sCTpDg)
+- 2. After you log into your account you need to [Setup an SSH Key on you MacOS](https://www.youtube.com/watch?v=e69K-sCTpDg) to connect to your new `Ubuntu 18.04 Linux Distribution`.
 
 ---
 
