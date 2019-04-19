@@ -239,10 +239,6 @@ echo $JAVA_HOME
 <div class='md-label'>Other users will need to reload the <span class='md-key'>environment</span> file or log out and log back in to run Java-based applications</div>
 
 
-### Conclusion
+### Next Step
 
-> You now have the correct versions of Java, the JRE, and the JDK installed
-
-<div class='md-label'>You now have the tools you need to install and run Java-based applications such as Elasticsearch</div>
-
-
+You are now ready to <a href='setup-secure-reverse-proxy'>Setup Secure HTTPS/SSL Reverse Proxy with Nginx</a>
