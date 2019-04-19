@@ -193,4 +193,4 @@ root@ubuntu-scanner:~#
 
 ## Next Step
 
-You can now <a href='setup-secure-reverse-proxy.html'>Setup a Secure HTTPS/SSL Reverse Proxy with Nginx</a>
+You are now ready to <a href='install-java'>Install Java, the JRE & the JDK on an Ubuntu 18.04 Linux Distribution</a>
