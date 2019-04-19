@@ -1,0 +1,703 @@
+<!DOCTYPE html><html><head>
+      <title>deploy-ubuntu-digitalocean</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/Flavor/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.13/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * Darcula theme
+ *
+ * Adapted from a theme based on:
+ * IntelliJ Darcula Theme (https://github.com/bulenkov/Darcula)
+ *
+ * @author Alexandre Paradis <service.paradis@gmail.com>
+ * @version 1.0
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #a9b7c6;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+    color: inherit;
+    background: rgba(33,66,131,.85);
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+    color: inherit;
+    background: rgba(33,66,131,.85);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #2b2b2b;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+	color: #808080;
+}
+
+.token.delimiter,
+.token.boolean,
+.token.keyword,
+.token.selector,
+.token.important,
+.token.atrule {
+	color: #cc7832;
+}
+
+.token.operator,
+.token.punctuation,
+.token.attr-name {
+    color: #a9b7c6;
+}
+
+.token.tag,
+.token.tag .punctuation,
+.token.doctype,
+.token.builtin {
+    color: #e8bf6a;
+}
+
+.token.entity,
+.token.number,
+.token.symbol {
+    color: #6897bb;
+}
+
+.token.property,
+.token.constant,
+.token.variable {
+    color: #9876aa;
+}
+
+.token.string,
+.token.char {
+	color: #6a8759;
+}
+
+.token.attr-value,
+.token.attr-value .punctuation {
+    color: #a5c261;
+}
+.token.attr-value .punctuation:first-child {
+    color: #a9b7c6;
+}
+
+.token.url {
+	color: #287bde;
+	text-decoration: underline;
+}
+
+.token.function {
+	color: #ffc66d;
+}
+
+.token.regex {
+    background: #364135;
+}
+
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.inserted {
+    background: #294436;
+}
+
+.token.deleted {
+    background: #484a4a;
+}
+
+/*code.language-css .token.punctuation {
+	color: #cc7832;
+}*/
+
+code.language-css .token.property,
+code.language-css .token.property + .token.punctuation {
+	color: #a9b7c6;
+}
+
+code.language-css .token.id {
+	color: #ffc66d;
+}
+
+code.language-css .token.selector > .token.class,
+code.language-css .token.selector > .token.attribute,
+code.language-css .token.selector > .token.pseudo-class,
+code.language-css .token.selector > .token.pseudo-element {
+	color: #ffc66d;
+}
+
+/* highlight */
+pre[data-line] {
+	position: relative;
+	padding: 1em 0 1em 3em;
+  }
+  pre[data-line] .line-highlight-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	display: block;
+	width: 100%;
+  }
+  
+  pre[data-line] .line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: inherit 0;
+	margin-top: 1em;
+	background: hsla(24, 20%, 50%,.08);
+	background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+	pointer-events: none;
+	line-height: inherit;
+	white-space: pre;
+  }
+  
+  pre[data-line] .line-highlight:before, 
+  pre[data-line] .line-highlight[data-end]:after {
+	content: attr(data-start);
+	position: absolute;
+	top: .4em;
+	left: .6em;
+	min-width: 1em;
+	padding: 0 .5em;
+	background-color: hsla(24, 20%, 50%,.4);
+	color: hsl(24, 20%, 95%);
+	font: bold 65%/1.5 sans-serif;
+	text-align: center;
+	vertical-align: .3em;
+	border-radius: 999px;
+	text-shadow: none;
+	box-shadow: 0 1px white;
+  }
+  
+  pre[data-line] .line-highlight[data-end]:after {
+	content: attr(data-end);
+	top: auto;
+	bottom: .4em;
+  }html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+html body {
+  text-decoration: none;
+}
+html body code {
+  background-color: gainsboro;
+}
+html body .markdown-preview h2 {
+  margin-bottom: 0;
+}
+html body .markdown-preview h3 {
+  margin-bottom: 4px;
+}
+html body .markdown-preview h4 {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+html body .markdown-preview h5 {
+  margin-top: 1em;
+  margin-bottom: 0;
+  opacity: 0.7;
+}
+html body .markdown-preview p {
+  margin-bottom: 0;
+}
+html body .markdown-preview ul {
+  margin-bottom: 12px;
+}
+html body .markdown-preview li.task-list-item {
+  margin-left: 24px;
+}
+html body .markdown-preview blockquote {
+  padding: 0 2px;
+  border-left: 5px solid gainsboro;
+}
+html body .markdown-preview blockquote p {
+  background-color: #f1f1f1;
+  padding: 4px 12px;
+  font-weight: 800px;
+}
+html body .markdown-preview .bt {
+  border-top: 1px solid gainsboro;
+  padding-top: 12px;
+}
+html body .markdown-preview .bb {
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 12px;
+}
+html body .md-header {
+  padding-top: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid gainsboro;
+  border-top: 1px solid #a9a9a9;
+}
+html body .md-header h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+html body .md-theory {
+  padding-left: 24px;
+  padding-top: 6px;
+  color: crimson;
+}
+html body .md-theory strong {
+  color: crimson;
+}
+html body .md-block-quote li {
+  margin-left: 40px;
+}
+html body .md-label {
+  margin-bottom: -0.4em;
+}
+a html body .md-label {
+  margin-bottom: 0;
+}
+html body .md-pink {
+  color: hotpink;
+  font-weight: bold;
+}
+html body .md-label-output {
+  margin-left: 2em;
+}
+html body .md-key {
+  background-color: gainsboro;
+  color: black;
+  padding: 0 0.5em 0.15em;
+}
+html body .bold {
+  font-weight: bold;
+}
+html body .md-label-header {
+  padding-top: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid gainsboro;
+}
+html body .md-label-header p {
+  margin-bottom: -24px;
+}
+html body .md-label-header-todo,
+html body .md-label-header-strategy {
+  margin-left: 24px;
+}
+html body .md-strategy {
+  margin-left: 24px;
+}
+html body a {
+  text-decoration: underline;
+}
+html body a.md-link-bold {
+  font-weight: bold;
+}
+html body .language-bash {
+  padding: 1em;
+  margin: 0.5em 0 0.75em;
+  overflow: auto;
+}
+html body .md-output {
+  margin-left: 2em;
+}
+html body .mb4 {
+  margin-bottom: 0.25em;
+}
+html body .copy-paste-icon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: -0.25em;
+  background-color: transparent;
+}
+html body .md-cmd-block {
+  position: relative;
+  overflow: hidden;
+}
+html body .md-cmd-block .copy-clip-icon {
+  position: absolute;
+  right: 0.125em;
+  top: 0.525em;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  z-index: 100;
+  padding: 0.15em;
+}
+html body .md-img--wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+html body .md-img {
+  position: relative;
+  margin: 0 auto;
+}
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="deploy-an-ubuntu-1804-linux-distribution-on-digital-ocean">Deploy an Ubuntu 18.04 Linux Distribution on Digital Ocean</h1>
+
+<hr>
+<h2 class="mume-header" id="create-project">Create Project</h2>
+
+<ul>
+<li>
+<ol>
+<li>Click on <code>New Project</code> in the left side menu</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Enter project name</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Enter project description</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Select <code>Web Application</code> from drop down menu</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Click <code>Create Project</code> button to finalize</li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-1.png">
+<br>
+<h2 class="mume-header" id="move-resouces">Move Resouces</h2>
+
+<blockquote>
+<p>You can move resources from other projects to this new one, but we will skip this step for now.</p>
+</blockquote>
+<ul>
+<li>
+<ol>
+<li>Click <code>Skip for now</code></li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-1a.png">
+<br>
+<h2 class="mume-header" id="create-droplet">Create Droplet</h2>
+
+<ul>
+<li>
+<ol>
+<li>Click <code>Get Started with a Droplet</code></li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-2.png">
+<br>
+<h2 class="mume-header" id="ubuntu-distribution">Ubuntu Distribution</h2>
+
+<ul>
+<li>
+<ol>
+<li>Click down arrow on the Ubuntu symbol</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Select the <code>18.04 x64</code> from the dropdown menu</li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-2a.png">
+<br>
+<h2 class="mume-header" id="plan-backups">Plan &amp; Backups</h2>
+
+<ul>
+<li>
+<ol>
+<li>Choose <code>Standard</code> plan</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Select the plan that fits your needs and budget</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Add Backups (optional)</li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-3.png">
+<br>
+<h2 class="mume-header" id="data-center">Data Center</h2>
+
+<ul>
+<li>
+<ol>
+<li>Choose the Data Center Region closest to you current geographical location</li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-3a.png">
+<br>
+<h2 class="mume-header" id="ssh-key">SSH Key</h2>
+
+<blockquote>
+<p>This will allow you to use the <code>Terminal</code> to remote login from your Macbook Pro.</p>
+</blockquote>
+<blockquote>
+<p><code>Remote login is required</code> to setup <code>Elasticsearch</code>, deploy <code>Node / React</code> apps.</p>
+</blockquote>
+<blockquote>
+<p>It is also required to <a href="setup-secure-reverse-proxy.html">Setup Secure HTTPS/SSL Reverse Proxy with Nginx</a></p>
+</blockquote>
+<ul>
+<li>
+<ol>
+<li>Click on the <code>New SSH Key</code> button</li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-ssh-key-4.png">
+<br>
+<h2 class="mume-header" id="add-ssh-key-macbook-pro">Add SSH Key - Macbook Pro</h2>
+
+<ul>
+<li>
+<ol>
+<li>In the <code>Terminal</code> use the command below to <code>cd</code> into the <code>.ssh</code> directory</li>
+</ol>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="bash {.copy-clip}" class="language-bash copy-clip"><span class="token function">cd</span> ~/.ssh
+</pre><ul>
+<li>
+<ol start="2">
+<li>Use the command below to <code>Copy</code> the key to to the <code>Terminal</code> output</li>
+</ol>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="bash {.copy-clip}" class="language-bash copy-clip"><span class="token function">cat</span> id_rsa.pub
+</pre><ul>
+<li>
+<ol start="3">
+<li><code>Select the key</code> and hit <code>Cmd + C</code> to <code>Copy the key</code> to the clipboard</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Use <code>Cmd + V</code> to <code>Paste the key</code> into the <code>SSH key content</code> box</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Name the key <code>id_rsa_pub_macbook_pro</code></li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>Click the <code>Add SSH Key</code> button to finalize</li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-ssh-key-5.png">
+<br>
+<br>
+<blockquote>
+<p>This key can now be added to future distributions</p>
+</blockquote>
+<img class="md-img" src="assets/img/do-droplet-ssh-key-6.png">
+<br>
+<h2 class="mume-header" id="finalize-and-deploy">Finalize and Deploy</h2>
+
+<ul>
+<li>
+<ol>
+<li>Choose a name</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Click the <code>Create</code> button to deploy</li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-7.png">
+<br>
+<h2 class="mume-header" id="view-your-new-ubuntu-1804-linux-distribution">View Your New Ubuntu 18.04 Linux Distribution</h2>
+
+<ul>
+<li>
+<ol>
+<li>When the deployment is complete click on the link to view your new distribution</li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-8.png">
+<br>
+<h2 class="mume-header" id="enable-private-ip">Enable Private IP</h2>
+
+<ul>
+<li>
+<ol>
+<li>Click on the <code>Networking</code> link</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Click on the <code>Enable now</code> link next to <code>Private IP</code></li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>When the <code>Private IP</code> has been enbaled click on the <code>IP ADRESS</code> to <code>Copy the IP</code> to the clipboard</li>
+</ol>
+</li>
+</ul>
+<img class="md-img" src="assets/img/do-droplet-9.png">
+<br>
+<h2 class="mume-header" id="remote-login">Remote Login</h2>
+
+<ol>
+<li>In the <code>Terminal</code> use the command below to Remote Login into your new Ubuntu 18.04 Linux Distribution</li>
+</ol>
+<blockquote>
+<p>NOTE: Use your Private IP copied from the previous step</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="bash {.copy-clip}" class="language-bash copy-clip"><span class="token function">ssh</span> root@YOUR_IP_ADDRESS
+</pre><div class="md-label md-label-output">You will be asked to verify connection.</div>
+<pre data-role="codeBlock" data-info="bash {.copy-clip .md-output}" class="language-bash copy-clip md-output">The authenticity of <span class="token function">host</span> <span class="token string">&apos;YOUR_IP_ADDRESS (YOUR_IP_ADDRESS)&apos;</span> can&apos;t be established.
+ECDSA key fingerprint is SHA256:69COxLPNVNt39BqYrl9T7nJ0NJnF15vUi8pqYQ7hWoY.
+Are you sure you want to <span class="token keyword">continue</span> connecting <span class="token punctuation">(</span>yes/no<span class="token punctuation">)</span>? 
+</pre><p>Type <code>yes</code> and hit the <code>Enter-key</code></p>
+<pre data-role="codeBlock" data-info="bash {.copy-clip}" class="language-bash copy-clip"><span class="token function">yes</span> 
+</pre><div class="md-label md-label-output">If everything was setup correctly you should now be Remote logged into your new Ubuntu 18.04 Linux Distribution!</div>
+<pre data-role="codeBlock" data-info="bash {.copy-clip .md-output}" class="language-bash copy-clip md-output">Warning: Permanently added <span class="token string">&apos;YOUR_IP_ADDRESS&apos;</span> <span class="token punctuation">(</span>ECDSA<span class="token punctuation">)</span> to the list of known hosts.
+Welcome to Ubuntu 18.04.2 LTS <span class="token punctuation">(</span>GNU/Linux 4.15.0-47-generic x86_64<span class="token punctuation">)</span>
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Apr 19 18:27:11 UTC 2019
+
+  System load:  0.0               Processes:           90
+  Usage of /:   1.2% of 77.36GB   Users logged in:     0
+  Memory usage: 3%                IP address <span class="token keyword">for</span> eth0: <span class="token string">&apos;YOUR_IP_ADDRESS&apos;</span>
+  Swap usage:   0%
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+
+The programs included with the Ubuntu system are <span class="token function">free</span> software<span class="token punctuation">;</span>
+the exact distribution terms <span class="token keyword">for</span> each program are described <span class="token keyword">in</span> the
+individual files <span class="token keyword">in</span> /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu-scanner:~<span class="token comment"># </span>
+</pre><h2 class="mume-header" id="next-step">Next Step</h2>
+
+<p>You can now <a href="setup-secure-reverse-proxy.html">Setup a Secure HTTPS/SSL Reverse Proxy with Nginx</a></p>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#deploy-an-ubuntu-1804-linux-distribution-on-digital-ocean">Deploy an Ubuntu 18.04 Linux Distribution on Digital Ocean</a>
+<ul>
+<li><a href="#create-project">Create Project</a></li>
+<li><a href="#move-resouces">Move Resouces</a></li>
+<li><a href="#create-droplet">Create Droplet</a></li>
+<li><a href="#ubuntu-distribution">Ubuntu Distribution</a></li>
+<li><a href="#plan-backups">Plan &amp; Backups</a></li>
+<li><a href="#data-center">Data Center</a></li>
+<li><a href="#ssh-key">SSH Key</a></li>
+<li><a href="#add-ssh-key-macbook-pro">Add SSH Key - Macbook Pro</a></li>
+<li><a href="#finalize-and-deploy">Finalize and Deploy</a></li>
+<li><a href="#view-your-new-ubuntu-1804-linux-distribution">View Your New Ubuntu 18.04 Linux Distribution</a></li>
+<li><a href="#enable-private-ip">Enable Private IP</a></li>
+<li><a href="#remote-login">Remote Login</a></li>
+<li><a href="#next-step">Next Step</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
