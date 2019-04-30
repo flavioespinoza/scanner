@@ -1,27 +1,31 @@
-
 # PN Setup Overview
 This document walks thru the detailed steps of PN enabling a test service and a client of the test service on your local machine, in the process one sets up a local privacy network consisting of two privacy domains.
 
 ## Abbreviations
 
-**Networks**
-`PN` - Privacy Network
-`PD` - Privacy Domain
-`PP` - Privacy Pipe
+```bash {cmd}
+docker-composev version
+```
+
+##### Networks
+
+`PN` Privacy Network
+`PD` Privacy Domain
+`PP` Privacy Pipe
 
 <br/>
 
-**Resources**
+##### Resources
 `RA` - Resource Authority
 `MyRA` - My Resouce Authority 
 - Tool to create & provision `RA`s
 
-**Trust**
+##### Trust
 `TA` - Trust Authority
 `MyTA` - My Trust Authority
 - Tool to create & provision `TA`s
 
-**Services**
+##### Services
 `ETS` - Enabled Test Service
 
 
@@ -293,7 +297,7 @@ shared_files_dir:
 ## 3.4 Provision MyRA into the network
 Run the following command to provision myRA into the network. Command details [link](https://github.com/webshield-dev/docs/blob/master/docs/setup-network.md#step-2---provisioning-a-pn-resource-authority)
 
-```
+```bash
 if docker run \
   --mount type=bind,source="$(pwd)/myra/config",destination="/config" \
   --mount type=bind,source="$(pwd)/myra/init-template",destination="/template" \
