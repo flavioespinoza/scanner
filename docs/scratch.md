@@ -1,3 +1,5 @@
+# SCRATCH
+
 # PN Setup Overview
 This document walks thru the detailed steps of PN enabling a test service and a client of the test service on your local machine, in the process one sets up a local privacy network consisting of two privacy domains.
 
