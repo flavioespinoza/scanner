@@ -59,19 +59,19 @@ exports.jwtAuth = (ctx, next) => passport.authenticate('jwt', async (err, payloa
 
 	const epochTimestamp = Math.round((new Date()).getTime() / 1000)
 
-	// // If there is no payload, inform the user they are not authorized to see the content
-	// if (!payload) {
-	// 	ctx.status = 401
-	// 	ctx.body = {errors: {error: ERRORS.JWT_FAILURE}, jwtExpired: true}
-	// 	// Check if JWT has expired, return error if so
-	// } else if (payload.exp <= epochTimestamp) {
-	// 	ctx.status = 401
-	// 	ctx.body = {errors: {error: ERRORS.JWT_EXPIRED}, jwtExpired: true}
-	// } else {
-	// 	// Add user to state
-	// 	ctx.state.user = payload
-	// 	await next()
-	// }
+	// If there is no payload, inform the user they are not authorized to see the content
+	if (!payload) {
+		ctx.status = 401
+		ctx.body = {errors: {error: ERRORS.JWT_FAILURE}, jwtExpired: true}
+		// Check if JWT has expired, return error if so
+	} else if (payload.exp <= epochTimestamp) {
+		ctx.status = 401
+		ctx.body = {errors: {error: ERRORS.JWT_EXPIRED}, jwtExpired: true}
+	} else {
+		// Add user to state
+		ctx.state.user = payload
+		await next()
+	}
 
 })(ctx, next)
 
@@ -98,11 +98,18 @@ exports.login = (ctx, next) => passport.authenticate('local', async (err, user) 
  */
 exports.register = async (ctx, next) => {
 
-	const validation = responseValidator(ctx.request.body, [
+	const register_user = {
+		firstName: ctx.request.body.name.firstName,
+		lastName: ctx.request.body.name.lastName,
+		email: ctx.request.body.email,
+		password: ctx.request.body.password,
+		passwordConfirm: ctx.request.body.passwordConfirm
+	}
+
+	const validation = responseValidator(register_user, [
 		{name: 'firstName', required: true},
 		{name: 'lastName', required: true},
 		{name: 'email', required: true},
-		{name: 'zipCode', required: true},
 		{name: 'password', required: true},
 		{name: 'passwordConfirm', required: true},
 	])
@@ -138,8 +145,7 @@ exports.register = async (ctx, next) => {
 					lastName,
 					password,
 					passwordConfirm,
-					email,
-					zipCode,
+					email
 				})
 
 				const savedUser = await user.save()

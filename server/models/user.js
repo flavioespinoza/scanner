@@ -29,13 +29,9 @@ const UserSchema = new Schema({
 	lastName: {type: String, unique: true, required: true},
 	firstName: {type: String, unique: true, required: true},
 	email: {type: String, unique: true, required: true},
-	zipCode: {type: Number, unique: true, required: true},
 	password: {type: String, unique: true, required: true},
 	insertdt: {type: Date, default: Date.now}
 }, userTime)
-
-
-
 
 UserSchema.virtual('fullName').get(function virtualFullName () {
 	return `${this.firstName} ${this.lastName}`

@@ -1,5 +1,4 @@
 const log = require('ololog').configure({locate: false})
-const _log = require('@flavioespinoza/log_log')
 
 const _error = function (method, err, socket) {
 	log.lightYellow(`${method}__ERROR `, err.message)
@@ -18,5 +17,3 @@ async function each (array, callback) {
 	  _error('async.each', err)
 	}
 }
-
-_log.alert('balls')

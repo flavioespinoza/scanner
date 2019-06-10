@@ -2756,13 +2756,6 @@ const _format_date = (format_string) => {
     return timeFormat(format_string)
 }
 
-const _error = (method, err, socket) => {
-    log.lightYellow(`${method}__ERROR`, err.message)
-    if (socket) {
-        socket.emit(`${method}__ERROR`, err.message)
-    }
-}
-
 const _toFixed = (__number, __digits, __min, __max, __is_balance) => {
 
     let digits
