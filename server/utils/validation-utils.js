@@ -17,13 +17,8 @@ const responseValidator = function responseValidator (req, fields) {
 	for (let i = 0; i < fields.length; i += 1) {
 		const isPresent = props.indexOf(fields[i].name) !== -1
 		const isRequired = fields[i].required
-
-
-
 		if (!isPresent && isRequired) {
 			switch (fields[i].name) {
-
-
 				case 'email':
 					errors.push({error: ERRORS.INVALID_EMAIL})
 					break

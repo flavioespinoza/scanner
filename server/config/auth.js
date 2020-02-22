@@ -13,15 +13,12 @@ module.exports = {
 			try {
 				const user = await User.findOne({email: email.toLowerCase()})
 				const isValid = await user.comparePassword(password)
-
 				return done(null, isValid ? user : {})
 			} catch (err) {
 				return done(err)
 			}
 		})
-
 		const jwtLogin = new JwtStrategy.Strategy(jwtOpts, (payload, done) => done(null, payload))
-
 		passport.use(jwtLogin)
 		passport.use(localLogin)
 		return passport
