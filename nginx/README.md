@@ -50,7 +50,7 @@ You then need to add this to your config file below the letsencrypt keys:
 # Proper Config
 
 default.conf
-```js
+```shell
 upstream nginx_rev_proxy {
     server  localhost:8080;
 }
@@ -79,7 +79,7 @@ server {
     ssl_certificate_key             /etc/letsencrypt/live/example.com/privkey.pem;
     include                         /etc/letsencrypt/options-ssl-nginx.conf;
 
-    ssl_dhparam                     /etc/letsencrypt/ssl-dhparams.pem;
+    ssl_dhparam                     /etc/ssl/certs/dhparam.pem;
 
     keepalive_timeout               60;
     ssl_session_cache               shared:SSL:10m;
