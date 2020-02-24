@@ -28,7 +28,18 @@ Output:
 ### Config
 You then need to add this to your config file below the letsencrypt keys:
 
-![docs/assets/img/dhparam-nginx.png](../docs/assets/img/dhparam-nginx.png)
+```shell
+    listen                          443 ssl;
+
+    ssl                             on;
+    server_name                     example.com www.example.com;
+
+    ssl_certificate                 /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key             /etc/letsencrypt/live/example.com/privkey.pem;
+    include                         /etc/letsencrypt/options-ssl-nginx.conf;
+
+    ssl_dhparam                     /etc/ssl/certs/dhparam.pem;  
+```
 
 # Why this matters using OpenSSL
 - [Diffie Hellman key exchange -- Practical_attacks_on_Internet_traffic](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange#Practical_attacks_on_Internet_traffic)
