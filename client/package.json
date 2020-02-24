@@ -11,7 +11,7 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.19.2",
     "babel-polyfill": "^6.23.0",
     "chance": "^1.0.18",
     "copy-to-clipboard": "^3.0.8",
