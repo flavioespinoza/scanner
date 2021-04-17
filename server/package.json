@@ -13,7 +13,7 @@
     "@sendgrid/mail": "^6.3.1",
     "ansicolor": "^1.1.78",
     "axios": "^0.18.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "ccxt": "^1.17.311",
     "chance": "^1.0.16",
     "copy-to-clipboard": "^3.0.8",
