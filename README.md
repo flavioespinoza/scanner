@@ -42,7 +42,7 @@ List of tools, libraries and frameworks that are key components of the project's
 
 > This project requies the  a development server to run `Elasticsearch`.  
 
-> I'm writting a series of `tutorials` with a `schedueled completion date` of `May 1, 2019`. 
+> I'm writting a series of `tutorials` with a `schedueled completion date` of `June 30, 2021`. 
 
 
 #### List of tutorials
